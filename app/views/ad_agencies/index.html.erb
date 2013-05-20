@@ -1,0 +1,29 @@
+<h1>Listing ad_agencies</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Photo url</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ad_agencies.each do |ad_agency| %>
+  <tr>
+    <td><%= ad_agency.name %></td>
+    <td><%= ad_agency.description %></td>
+    <td><%= ad_agency.photo_url %></td>
+    <td><%= ad_agency.email %></td>
+    <td><%= link_to 'Show', ad_agency %></td>
+    <td><%= link_to 'Edit', edit_ad_agency_path(ad_agency) %></td>
+    <td><%= link_to 'Destroy', ad_agency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ad agency', new_ad_agency_path %>

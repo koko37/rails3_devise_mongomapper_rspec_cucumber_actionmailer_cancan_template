@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @ad_agency.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @ad_agency.description %>
+</p>
+
+<p>
+  <b>Photo url:</b>
+  <%= @ad_agency.photo_url %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @ad_agency.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_ad_agency_path(@ad_agency) %> |
+<%= link_to 'Back', ad_agencies_path %>
