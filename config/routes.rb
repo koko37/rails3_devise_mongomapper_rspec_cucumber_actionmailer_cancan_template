@@ -1,6 +1,6 @@
 Mylife::Application.routes.draw do
   resources :ad_agencies
-
+  root :to => 'ad_agencies#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
