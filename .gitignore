@@ -16,3 +16,6 @@
 
 *~
 *.swp
+
+# security information
+/config/initializers/email_credential.rb
