@@ -5,5 +5,6 @@ class AdAgency
    key :description, String
    key :photo_url, String
    key :email, String
+
    timestamps!
 end
