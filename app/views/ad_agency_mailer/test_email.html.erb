@@ -7,7 +7,8 @@
   <body>
     <h1>Welcome! Advertiser <%= @adagency.name %></h1>
     <p>This is test email</p>
-    <p>To visit the website, just follow this link: <%= @url %>.</p>
+    <p><%= @adagency.description %></p>
+    <p>To visit the website, just follow this link: <%= link_to 'my site',@url,:class=>'btn btn-danger' %>.</p>
     <p>Thank you very much.</p>
   </body>
 </html>

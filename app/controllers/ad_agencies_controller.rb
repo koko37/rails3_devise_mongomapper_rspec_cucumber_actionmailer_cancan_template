@@ -16,6 +16,9 @@ class AdAgenciesController < ApplicationController
   def show
     @ad_agency = AdAgency.find(params[:id])
 
+    # Tell Mailer to send a test email
+    AdAgencyMailer.test_email(@ad_agency).deliver
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @ad_agency }
@@ -45,9 +48,6 @@ class AdAgenciesController < ApplicationController
 
     respond_to do |format|
       if @ad_agency.save
-
-        # Tell Mailer to send a test email
-        AdAgencyMailer.test_email(@ad_agency).deliver
 
         format.html { redirect_to @ad_agency, notice: 'Ad agency was successfully created.' }
         format.json { render json: @ad_agency, status: :created, location: @ad_agency }

@@ -35,8 +35,8 @@ Mylife::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'baci.lindsaar.net',
-    :user_name            => EMAIL_ACCOUNT,
-    :password             => EMAIL_PASSWD,
+    :user_name            => 'rocks198325@gmail.com',
+    :password             => 'outsourcing070',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 
