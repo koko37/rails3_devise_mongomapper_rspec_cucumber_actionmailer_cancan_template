@@ -31,13 +31,6 @@ Mylife::Application.configure do
 
   # Action mailer
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => 'baci.lindsaar.net',
-    :user_name            => 'rocks198325@gmail.com',
-    :password             => 'outsourcing070',
-    :authentication       => 'plain',
-    :enable_starttls_auto => true  }
+  # other settings in email_credential.rb
 
 end

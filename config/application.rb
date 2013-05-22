@@ -66,3 +66,9 @@ module Mylife
     config.assets.version = '1.0'
   end
 end
+
+CONFIG= YAML.load(File.read(File.expand_path('../localsettings.yml',__FILE__)))
+CONFIG.merge! CONFIG.fetch(Rails.env, {})
+CONFIG.symbolize_keys!
+
+
