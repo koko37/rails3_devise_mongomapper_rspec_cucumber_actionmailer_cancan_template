@@ -6,6 +6,7 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
+  ## Database authenticatable
+  key :email, String, :null => false, :default => ""
 
 end

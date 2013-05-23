@@ -2,6 +2,8 @@ Mylife::Application.routes.draw do
   resources :ad_agencies
   root :to => 'ad_agencies#index'
 
+  devise_for :user
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
