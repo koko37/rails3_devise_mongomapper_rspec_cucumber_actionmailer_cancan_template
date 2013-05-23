@@ -26,10 +26,16 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'cucumber-rails', :require => false
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'email_spec'
+  gem 'spork'
+end
+
+group :test do
+
 end
 
 gem 'thin'
