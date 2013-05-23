@@ -4,7 +4,7 @@ class User
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   ## Database authenticatable
   key :email, String, :null => false, :default => ""
@@ -24,9 +24,23 @@ class User
   key :current_sign_in_ip, String
   key :last_sign_in_ip, String
 
+  ## Confirmable
+  key :confirmation_token, String
+  key :confirmed_at, Time
+  key :confirmation_sent_at, Time
+  key :unconfirmed_email, String # Only if using reconfirmable
+
+  ## Lockable
+  # key :failed_attempts, Integer, :default => 0 # Only if lock strategy is :failed_attempts
+  # key :unlock_token, String # Only if unlock strategy is :email or :both
+  # key :locked_at, Time
+
+  ## Token authenticatable
+  # key :authentication_token, String
+  # run 'rake db:mongoid:create_indexes' to create indexes
 
   key :name
-
+  # validates_presence_of :name
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 end
 
