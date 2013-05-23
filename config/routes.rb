@@ -2,7 +2,13 @@ Mylife::Application.routes.draw do
   resources :ad_agencies
   root :to => 'ad_agencies#index'
 
-  devise_for :user do
+# devise authenticated fixed page
+#  authenticated :user do
+#    root :to => 'home#index'
+#  end
+ 
+  devise_for :user
+  devise_scope :user do
      get "sign_in", :to => "devise/sessions#new", :as => :signin
      get "sign_out", :to => "devise/sessions#destroy", :as => :signout
   end
