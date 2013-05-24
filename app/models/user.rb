@@ -4,7 +4,7 @@ class User
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable#, :confirmable
 
   ## Database authenticatable
   key :email, String, :null => false, :default => ""
@@ -25,10 +25,10 @@ class User
   key :last_sign_in_ip, String
 
   ## Confirmable
-  key :confirmation_token, String
-  key :confirmed_at, Time
-  key :confirmation_sent_at, Time
-  key :unconfirmed_email, String # Only if using reconfirmable
+  # key :confirmation_token, String
+  # key :confirmed_at, Time
+  # key :confirmation_sent_at, Time
+  # key :unconfirmed_email, String # Only if using reconfirmable
 
   ## Lockable
   # key :failed_attempts, Integer, :default => 0 # Only if lock strategy is :failed_attempts

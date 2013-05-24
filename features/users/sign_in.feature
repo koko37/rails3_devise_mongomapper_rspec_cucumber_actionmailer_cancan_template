@@ -6,8 +6,8 @@ Feature: Sign in
     Scenario: User is not signed up
       Given I do not exist as a user
       When I sign in with valid credentials
-      Then I see an invalid login message
-        And I should be signed out
+      Then I see a successful sign in message
+        
 
     Scenario: User signs in successfully
       Given I exist as a user

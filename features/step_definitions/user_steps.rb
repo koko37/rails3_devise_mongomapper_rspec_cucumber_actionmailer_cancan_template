@@ -13,7 +13,7 @@ def create_unconfirmed_user
   create_visitor
   delete_user
   sign_up
-  visit '/users/sign_out'
+  visit '/user/sign_out'
 end
 
 def create_user
@@ -29,8 +29,8 @@ end
 
 def sign_up
   delete_user
-  visit '/users/sign_up'
-  fill_in "user_name", :with => @visitor[:name]
+  visit '/user/sign_up'
+#  fill_in "user_name", :with => @visitor[:name]
   fill_in "user_email", :with => @visitor[:email]
   fill_in "user_password", :with => @visitor[:password]
   fill_in "user_password_confirmation", :with => @visitor[:password_confirmation]
@@ -39,7 +39,7 @@ def sign_up
 end
 
 def sign_in
-  visit new_user_session_path # '/users/sign_in'
+  visit '/user/sign_in'
   fill_in "user_email", :with => @visitor[:email]
   fill_in "user_password", :with => @visitor[:password]
   click_button "Sign in"
@@ -47,7 +47,7 @@ end
 
 ### GIVEN ###
 Given /^I am not logged in$/ do
-  visit '/users/sign_out'
+  visit '/user/sign_out'
 end
 
 Given /^I am logged in$/ do
@@ -70,12 +70,12 @@ end
 
 ### WHEN ###
 When /^I sign in with valid credentials$/ do
-  create_visitor
+  create_user
   sign_in
 end
 
 When /^I sign out$/ do
-  visit '/users/sign_out'
+  visit '/user/sign_out'
 end
 
 When /^I sign up with valid user data$/ do
