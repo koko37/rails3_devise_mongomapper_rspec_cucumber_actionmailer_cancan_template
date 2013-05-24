@@ -39,7 +39,7 @@ def sign_up
 end
 
 def sign_in
-  visit '/users/sign_in'
+  visit new_user_session_path # '/users/sign_in'
   fill_in "user_email", :with => @visitor[:email]
   fill_in "user_password", :with => @visitor[:password]
   click_button "Sign in"
@@ -141,8 +141,8 @@ end
 
 Then /^I should be signed out$/ do
   page.should have_content "Sign up"
-  page.should have_content "Login"
-  page.should_not have_content "Logout"
+  page.should have_content "Sign in"
+  page.should_not have_content "Sign out"
 end
 
 Then /^I see an unconfirmed account message$/ do

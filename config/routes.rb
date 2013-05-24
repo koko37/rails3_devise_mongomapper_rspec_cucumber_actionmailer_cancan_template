@@ -8,10 +8,10 @@ Mylife::Application.routes.draw do
 #  end
  
   devise_for :user
-  devise_scope :user do
-     get "sign_in", :to => "devise/sessions#new", :as => :signin
-     get "sign_out", :to => "devise/sessions#destroy", :as => :signout
-  end
+  # devise_scope :user do
+  #    get "sign_in", :to => "devise/sessions#new", :as => :signin
+  #    get "sign_out", :to => "devise/sessions#destroy", :as => :signout
+  # end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -29,7 +29,7 @@
 <br />
 
 <%= link_to 'New Ad agency', new_ad_agency_path,:class => 'btn' %>
-<%= link_to 'Sign out', signout_path,:class=>'btn btn-primary' %>
+<%= link_to 'Sign out', destroy_user_session_path,:method => 'delete',:class=>'btn btn-primary' %>
 </div>
 </div>
 
